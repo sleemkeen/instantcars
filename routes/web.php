@@ -11,10 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::group(['namespace' => 'Front'], function () {
+  Route::get('/', 'HomeController@index')->name('index');
+  Route::get('/about', 'HomeController@about')->name('about');
+  Route::get('/contact', 'HomeController@contact')->name('contact');
+  Route::get('/login', 'HomeController@login')->name('login');
+  Route::get('/register', 'HomeController@register')->name('register');
+  Route::get('/how-it-works', 'HomeController@work')->name('how-it-works');
+  Route::get('/faq', 'HomeController@faq')->name('faq');
+  Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy');
+  Route::get('/login', 'HomeController@login')->name('login');
+  Route::get('/register', 'HomeController@register')->name('register');
+  Route::get('/deals', 'HomeController@deals')->name('deals');
+  Route::get('/submit-a-car', 'HomeController@listacar')->name('listacar');
+
+  Route::get('/car-detail', 'HomeController@detail')->name('detail');
 });
 
+
+
+Route::group(['namespace' => 'Admin'], function () {
+  Route::get('/home', 'AdminController@home');
+});
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => [ 'jwtAuth', 'isAdmin']], function () {
