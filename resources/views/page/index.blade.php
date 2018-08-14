@@ -450,14 +450,6 @@
 	<!-- Fullwidth Section / End -->
 
 
-	<!-- Flip banner -->
-	<a href="listings-half-map-grid-standard.html" class="flip-banner parallax" data-background="images/flip-banner-bg.jpg" data-color="#4497D2" data-color-opacity="0.9" data-img-width="2500" data-img-height="1600">
-		<div class="flip-banner-content">
-			<h2 class="flip-visible">Premium Car Hire in the Nigeria</h2>
-			<h2 class="flip-hidden">Browse Cars <i class="sl sl-icon-arrow-right"></i></h2>
-		</div>
-	</a>
-	<!-- Flip banner / End -->
 
 <!-- Footer
 	================================================== -->
