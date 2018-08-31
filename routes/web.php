@@ -33,7 +33,8 @@ Route::group(['namespace' => 'Front'], function () {
 
 
 Route::group(['namespace' => 'Admin'], function () {
-  Route::get('/home', 'AdminController@home');
+   Route::get('/home', 'AdminController@home');
+   Route::get('/profile', 'AdminController@profile');
 });
 
 
