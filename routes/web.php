@@ -44,6 +44,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => [ 'jw
 
 Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => [ 'Authjwt']], function () {
    
+    Route::post('login', 'UserController@login')->name('user.login');
+    Route::post('register', 'UserController@Register')->name('user.register');
     Route::get('getalluser', 'UserController@getusers');
     Route::get('testdelete', 'UserController@delete');
     

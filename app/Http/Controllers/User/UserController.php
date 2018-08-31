@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 use JWTAuth;
 use Crypt;
 
-
 use App\User;
 use App\Post;
 use App\Link;
@@ -35,13 +34,16 @@ class UserController extends Controller
         try {
             $body = $request->all();
                 //validate request body
+
             $validation = $this->validate->validateuser($body);
+
             if($validation->fails())
             {
                 $errorMessages = $validation->getMessageBag()->messages();
               
                 return response()->json(["error" => $errorMessages]);
             } else {
+                $body['password'] = bcrypt($body['password']);
                 $this->user->create($body);
                 return response()->json(["success" => "User successfully created"], 200);
             }
@@ -49,6 +51,30 @@ class UserController extends Controller
             return response()->json(["message" => $e->getMessage()], 500);
         }
     }
+
+
+
+    /**
+     * Authenticate a registered User
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function login(Request $request)
+    {  
+        $validation = $this->validate->authuser($request->all());
+
+        if($validation->fails())
+        {
+            $errorMessages = $validation->getMessageBag()->messages();
+          
+            return response()->json(["error" => $errorMessages]);
+        } else {
+            $auth =  new \App\Http\Controllers\AuthController();
+            return $auth->login();
+        }
+       
+    }
+
 
 
 
