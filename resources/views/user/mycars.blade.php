@@ -37,7 +37,7 @@
 					<ul class="my-account-nav">
 						<li class="sub-nav-title">Manage Listings</li>
 						<li><a href="mycars"><i class="sl sl-icon-docs"></i> My Cars</a></li>
-						<li><a href="submit-property.html"><i class="sl sl-icon-action-redo"></i> List New Cars</a></li>
+						<li><a href="submit-a-car"><i class="sl sl-icon-action-redo"></i> List New Cars</a></li>
 					</ul>
 
 					<ul class="my-account-nav">
