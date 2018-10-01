@@ -32,7 +32,7 @@
 						
 						<!-- Avatar -->
 						<div class="edit-profile-photo">
-							<img src="images/agent-01.jpg" alt="">
+							<img src="{{asset('images/agent-01.jpg')}}" alt="">
 							<div class="change-photo-btn">
 								<div class="photoUpload">
 								    <span><i class="fa fa-upload"></i> Upload Photo</span>
