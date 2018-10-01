@@ -24,7 +24,7 @@ class AuthController extends Controller
      */
     public function login()
     {
-        $credentials = request(['email', 'password']);
+        $credentials = request(['username', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Email or Password does not exist'], 401);
@@ -78,7 +78,7 @@ class AuthController extends Controller
             'access_token' => $token, 
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
-            'user' => auth()->user()->id
+            'user' => auth()->user()
         ]);
     }
 }

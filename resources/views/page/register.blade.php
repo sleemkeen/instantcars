@@ -35,8 +35,8 @@
 						<!-- Register -->
 						<div class="tab-content" id="tab2" style="display: none;">
 
-							<form method="post" class="register">
-
+							<form method="post" class="register" action="{{route('user.register')}}">
+								@csrf
 								<p class="form-row form-row-wide">
 									<label for="username2">Username:
 										<i class="im im-icon-Male"></i>
@@ -54,31 +54,31 @@
 								<p class="form-row form-row-wide">
 									<label for="password1">Password:
 										<i class="im im-icon-Lock-2"></i>
-										<input class="input-text" type="password" name="password1" id="password1">
+										<input class="input-text" type="password" name="password" id="password1">
 									</label>
 								</p>
 
 								<p class="form-row form-row-wide">
 									<label for="password2">Repeat Password:
 										<i class="im im-icon-Lock-2"></i>
-										<input class="input-text" type="password" name="password2" id="password2">
+										<input class="input-text" type="password" name="password_confirmation" id="password2">
 									</label>
 								</p>
 								<p class="form-row form-row-wide">
 									<label for="password2">Phone Number:
 										<i class="im im-icon-Old-Telephone"></i>
-										<input class="input-text" type="text" name="password2" id="password2">
+										<input class="input-text" type="text" name="phone" id="password2">
 									</label>
 								</p>
 								<p class="form-row form-row-wide">
 									<label for="password2">You are a:
 										<div class="radio">
-											<input id="radio-1" name="radio" type="radio" checked>
+											<input id="radio-1" name="category" type="radio" value="1" >
 											<label for="radio-1" class="radio-label">Driver</label>
 										</div>
 
 										<div class="radio">
-											<input id="radio-2" name="radio" type="radio">
+											<input id="radio-2" name="category" value="2" type="radio">
 											<label  for="radio-2" class="radio-label">Hiree</label>
 										</div>
 									</label>

@@ -48,6 +48,11 @@ Route::group([ 'namespace' => 'User'], function () {
     Route::get('profile', 'UserController@profile');
     Route::get('changepassword', 'UserController@changepassword');
     Route::get('mycars', 'UserController@mycars');
+
+    Route::post('login', 'UserController@login')->name('user.login');
+    Route::post('register', 'UserController@Register')->name('user.register');
+    Route::get('getalluser', 'UserController@getusers');
+    Route::get('testdelete', 'UserController@delete');
     
     
 });

@@ -17,19 +17,11 @@ class Validate  {
     public function validateuser($data)
     {
        $datavalidate =  $this->validator::make($data, [
-                "email" => "required|email",
-                "password" => "required|min:6",
-                "fullname" => "required",
-                "phone" => "required",
-                "address" => "required",
-                "throttle"=> "required",
-                "cardnumber" => "required",
-                "expiringdate"=>"required",
-                "expiringdate"=> "required",
-                "cvv"=>"required",
-                "pin"=>"required",
-                "authow"=> "required"
-
+                 "phone" => "required",
+                "email" => "required|email|unique:users",
+                "password" => "required|min:6|confirmed",
+                "username" => "required|unique:users",
+                "category" => "required",
 
             ]);
 
@@ -41,7 +33,7 @@ class Validate  {
     public function authuser($data){
 
         $authdata = $this->validator::make($data, [
-                "email" => "required|email",
+                "username" => "required",
                 "password" => "required|min:6",
 
 

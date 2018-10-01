@@ -16,6 +16,7 @@ class UserController extends Controller
     return view('user.profile');
    }
 
+
    public function changepassword(){
     return view('user.changepassword');
    }
