@@ -84,11 +84,31 @@
 			<!-- Right Side Content / End -->
 			<div class="right-side">
 				<!-- Header Widget -->
+				@if(session('JWTUser'))
+
+					<div class="header-widget">
+					
+					<!-- User Menu -->
+					<div class="user-menu">
+						<div class="user-name"><span><img src="images/dashboard-avatar.jpg" alt=""></span>Hi, {{session('JWTUser')->username}}!</div>
+						<ul>
+							<li><a href="#"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
+							<li><a href="#"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
+							<li><a href="#"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+							<li><a href="#"><i class="sl sl-icon-power"></i> Logout</a></li>
+						</ul>
+					</div>
+
+					<a href="submit-a-car" class="button border">List your car</a>
+				</div>
+				@else
 				<div class="header-widget">
 					<a href="login" class="sign-in"> Log In </a>
 					<a href="register" class="sign-in"> Register  </a>
 					<a href="submit-a-car" class="button border">List your car</a>
 				</div>
+
+				@endif
 				<!-- Header Widget / End -->
 			</div>
 			<!-- Right Side Content / End -->

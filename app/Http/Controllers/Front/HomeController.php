@@ -35,9 +35,17 @@ class HomeController extends Controller
   }
 
   public function login(){
+    if (auth()->user()) {
+          return  $this->redirect();
+        }
+     
       return view('page.login');
   }
+
   public function register(){
+    if (auth()->user()) {
+          return  $this->redirect();
+        }
       return view('page.register');
   }
 
@@ -54,5 +62,9 @@ class HomeController extends Controller
   }
 
   
+    public function redirect()
+    {
+        return redirect()->route('index');
+    }
 
 }    

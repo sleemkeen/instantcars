@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-
+use Tymon\JWTAuth;
 class AuthController extends Controller
 {
     /**
@@ -24,13 +24,17 @@ class AuthController extends Controller
      */
     public function login()
     {
+        
         $credentials = request(['username', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Email or Password does not exist'], 401);
         }
 
-        return $this->respondWithToken($token);
+       // $this->respondWithToken($token);
+
+        session()->put('JWTUser',\JWTAuth::user());
+        return redirect()->route('index');
     }
 
     /**
@@ -81,4 +85,6 @@ class AuthController extends Controller
             'user' => auth()->user()
         ]);
     }
+
+
 }

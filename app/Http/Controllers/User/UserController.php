@@ -60,7 +60,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request)
-    {  
+    {   
+
+        
         $validation = $this->validate->authuser($request->all());
 
         if($validation->fails())
@@ -102,8 +104,6 @@ class UserController extends Controller
         }
     }
 
-   
-
-    
+  
 
 }    
