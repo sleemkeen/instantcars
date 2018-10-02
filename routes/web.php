@@ -32,25 +32,28 @@ Route::group(['namespace' => 'Front'], function () {
 
 
 
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
    Route::get('/home', 'AdminController@home');
    Route::get('/profile', 'AdminController@profile');
 });
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => [ 'jwtAuth', 'isAdmin']], function () {
+// Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => [ 'jwtAuth', 'isAdmin']], function () {
    
-});
+// });
 
 
-Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => [ 'Authjwt']], function () {
+Route::group([ 'namespace' => 'User'], function () {
    
+    Route::get('profile', 'UserController@profile');
+    Route::get('changepassword', 'UserController@changepassword');
+    Route::get('mycars', 'UserController@mycars');
+
     Route::post('login', 'UserController@login')->name('user.login');
     Route::post('register', 'UserController@Register')->name('user.register');
     Route::get('getalluser', 'UserController@getusers');
     Route::get('testdelete', 'UserController@delete');
     
-    Route::get('testdata', 'UserController@testdata');
     
 });
 

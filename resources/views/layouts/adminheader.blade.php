@@ -10,8 +10,8 @@
 
 <!-- CSS
 ================================================== -->
-<link rel="stylesheet" href="admin/css/style.css">
-<link rel="stylesheet" href="admin/css/colors/main.css" id="colors">
+<link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+<link rel="stylesheet" href="'{{asset('admin/css/colors/main.css')}}" id="colors">
 
 </head>
 
@@ -31,7 +31,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<a href="/"><img src="images/logo.png" alt=""></a>
-					<a href="/" class="dashboard-logo"><img src="images/logoadmin.png" alt=""></a>
+					<a href="/" class="dashboard-logo"><img src="{{asset('images/logoadmin.png')}}" alt=""></a>
 				</div>
 
 				<!-- Mobile Navigation -->
@@ -58,7 +58,7 @@
 					
 					<!-- User Menu -->
 					<div class="user-menu">
-						<div class="user-name"><span><img src="images/dashboard-avatar.jpg" alt=""></span>Hi, Tom!</div>
+						<div class="user-name"><span><img src="{{asset('images/dashboard-avatar.jpg')}}" alt=""></span>Hi, Tom!</div>
 						<ul>
 							<li><a href="#"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
 							<li><a href="#"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
@@ -130,17 +130,17 @@
 
 <!-- Scripts
 ================================================== -->
-<script type="text/javascript" src="admin/scripts/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="admin/scripts/mmenu.min.js"></script>
-<script type="text/javascript" src="admin/scripts/chosen.min.js"></script>
-<script type="text/javascript" src="admin/scripts/slick.min.js"></script>
-<script type="text/javascript" src="admin/scripts/rangeslider.min.js"></script>
-<script type="text/javascript" src="admin/scripts/magnific-popup.min.js"></script>
-<script type="text/javascript" src="admin/scripts/waypoints.min.js"></script>
-<script type="text/javascript" src="admin/scripts/counterup.min.js"></script>
-<script type="text/javascript" src="admin/scripts/jquery-ui.min.js"></script>
-<script type="text/javascript" src="admin/scripts/tooltips.min.js"></script>
-<script type="text/javascript" src="admin/scripts/custom.js"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/jquery-2.2.0.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/mmenu.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/chosen.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/slick.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/rangeslider.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/magnific-popup.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/waypoints.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/counterup.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/jquery-ui.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/tooltips.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/scripts/custom.js')}}"></script>
 
 
 </body>

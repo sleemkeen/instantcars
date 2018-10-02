@@ -8,19 +8,13 @@ use App\Http\Helper\Validate;
 use App\Http\Helper\General;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\DB;
-use JWTAuth;
-use Crypt;
 
-use App\User;
-use App\Post;
-use App\Link;
 
 class UserController extends Controller
 {
-    private $auth;
-    private $validate;
-    private $user;
-    private $general;
+   public function profile(){
+    return view('user.profile');
+   }
 
 
     public function __construct(JWTAuth $auth, Validate $validate, User $user, General $general) {
@@ -105,5 +99,13 @@ class UserController extends Controller
     }
 
   
+   public function changepassword(){
+    return view('user.changepassword');
+   }
+
+    public function mycars(){
+    return view('user.mycars');
+   }
+    
 
 }    
